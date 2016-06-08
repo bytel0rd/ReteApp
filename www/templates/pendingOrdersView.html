@@ -1,0 +1,17 @@
+<ion-view view-title="Pending Orders">
+
+<ion-content>
+
+    <div class="list">
+      <a class="item item-avatar" ng-repeat="order in ordersList">
+        <img ng-src="{{order.ownerImgUrl}}">
+        <h2>{{order.ownerUserName}}</h2>
+         <!-- <h6 class="pull-right">testing </h6> -->
+        <p>{{order.smallDetails}}</p>
+      </a>
+    </div>
+
+</ion-content>
+
+
+</ion-view>

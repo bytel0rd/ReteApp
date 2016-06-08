@@ -1,0 +1,15 @@
+<ion-view view-title="Delivery Feed">
+ <!-- track by order._id -->
+  <ion-content>
+    <!-- ng-click="acceptOrder(order._id)" -->
+    <div class="list">
+      <a class="item item-avatar" ui-sref = 'app.feedItem({id: order._id})' ng-repeat="order in feedData ">
+        <img src="img/material1.jpg">
+        <h2>{{order.owner_userName}}</h2>
+        <p>{{order.hint}}  </p>
+      </a>
+    </div>
+    <!-- {{feedData}} -->
+  </ion-content>
+
+</ion-view>

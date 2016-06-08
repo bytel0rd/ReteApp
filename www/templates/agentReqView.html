@@ -1,0 +1,33 @@
+<ion-view view-title="Agent Request">
+  <ion-content>
+    <!-- <button class="border-top button button-block button-calm icon-left ion-person"  >
+      iGabriel signUp
+    </button> -->
+    <div class="padding">
+      <!-- <h4 class="border-top"><i class="icon ion-edit"></i>iGabriel signUp</h4> -->
+      <div class="list">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Address</span>
+          <input required type="text" placeholder="Address" ng-model="agent.address">
+          <!-- <p>Original FullNAME for Identification</p> -->
+        </label>
+      </div>
+      <div class="row padding">
+        <button class="button button-block  button-positive icon-left ion-person-add" ng-disabled="!agent.address || !signUp.phoneNo || !signUp.email
+               || !signUp.userName || !signUp.password" ng-click="signUpUser(signUp)">
+          Become An Agent
+        </button>
+      </div>
+      <div ng-if="err" class="row ">
+        <div class="col">
+          <div class="text-center">
+            <p style="text-align: center">
+              {{err}}
+            </p>
+          </div>
+
+        </div>
+      </div>
+  </div>
+</ion-content>
+</ion-view>

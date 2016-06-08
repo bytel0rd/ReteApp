@@ -1,0 +1,27 @@
+<ion-view view-title="My Deliveries">
+
+  <ion-content>
+
+    <div ng-if="err" class="row ">
+      <div class="col">
+        <div class="text-center">
+          <p style="text-align: center">
+            {{err}}
+
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="list">
+      <a class="item item-avatar" ng-repeat="delivery in deliveryList">
+        <!-- <img ng-src='img/arya.jpg'> -->
+        <h2>{{delivery.owner_userName}}</h2>
+        <p>{{delivery.hint}}</p>
+      </a>
+    </div>
+
+  </ion-content>
+
+</ion-view>

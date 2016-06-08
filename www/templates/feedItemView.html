@@ -1,0 +1,65 @@
+<ion-view view-title="Order Detail">
+  <ion-content>
+    <div ng-if="!err" class="">
+      <div class="card">
+        <div class="item item-divider">
+          <div class="row">
+            <div class="col col-25">Time</div>
+            <div class="col col-75">{{feed.dateCreated}}</div>
+          </div>
+          I'm a Header in a Card!
+        </div>
+        <div class="item item-text-wrap">
+          <div class="row">
+            <p>
+              Hint:
+            </p>
+            <p>
+              {{feed.hint}}
+            </p>
+          </div>
+          <div class="row">
+            <div class="col col-40">Delivered:
+              {{feed.delivered}}</div>
+            <div class="col col-60">XpTime:
+              {{feed.deliveryTime}}</div>
+          </div>
+          <div class="">
+            <p>
+              DETAILS
+            </p>
+            <p>
+              {{feed.details}}
+            </p>
+          </div>
+        </div>
+        <div class="item item-divider">
+          <div class="row">
+            <p>
+              createdBy:
+              {{feed.owner_userName}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-if="err" class="">
+      <p>
+        {{err}}
+      </p>
+    </div>
+    <div ng-show="hideButtons">
+      <div ng-if="showAbort">
+        <button class="button button-block  button-assertive" ui-sref="app.feed">
+          Abort
+        </button>
+      </div>
+      <div ng-if="!showAbort">
+        <div class="button-bar">
+          <a class="button button-assertive"  ui-sref="app.feed" >Abort</a>
+          <a class="button button-balanced" ng-click="acceptOrder(feed._id)">Accept</a>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
