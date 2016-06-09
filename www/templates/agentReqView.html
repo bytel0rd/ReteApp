@@ -7,14 +7,20 @@
       <!-- <h4 class="border-top"><i class="icon ion-edit"></i>iGabriel signUp</h4> -->
       <div class="list">
         <label class="item item-input item-floating-label">
-          <span class="input-label">Address</span>
-          <input required type="text" placeholder="Address" ng-model="agent.address">
-          <!-- <p>Original FullNAME for Identification</p> -->
+          <span class="input-label">Street Address</span>
+          <input required type="text" placeholder="Street Address" ng-model="agent.address.street">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Town or City</span>
+          <input required type="text" placeholder="Town or City" ng-model="agent.address.town">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">State</span>
+          <input required type="text" placeholder="State" ng-model="agent.address.state">
         </label>
       </div>
       <div class="row padding">
-        <button class="button button-block  button-positive icon-left ion-person-add" ng-disabled="!agent.address || !signUp.phoneNo || !signUp.email
-               || !signUp.userName || !signUp.password" ng-click="signUpUser(signUp)">
+        <button class="button button-block  button-positive icon-left ion-person-add" ng-disabled="!agent.address.state || !agent.address.town || !agent.address.street" ng-click="agentReq(agent)">
           Become An Agent
         </button>
       </div>

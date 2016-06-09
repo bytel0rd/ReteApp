@@ -4,9 +4,9 @@
 
       // checks if the user s already loginIn
       // if not the app displays the login page
-      if (CacheFactory.get('profileDataCache').get('profile').user) {
-        $state.go('app.mainMenu');
-      }
+      // if (CacheFactory.get('profileDataCache').get('profile').user) {
+      //   $state.go('app.mainMenu');
+      // }
 
     //loginUser fuction takes the parameter of
     // @ {login.email} as the email for authetification

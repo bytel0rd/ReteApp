@@ -50,10 +50,30 @@
       authFactory.getUserBio = function() {
         // note the http request from angular
         // already returns a promise value
-        
+
         var url = '/auth/dashBoard';
         return $http.get(url);
       }
+
+      authFactory.agentReq = function(agentData) {
+        var url = '/auth/authorizeAgent';
+        var defer = $q.defer();
+        $http.post(url, agentData)
+          .then(function signUpSuccess(resData) {
+            // ths first callback responds to the success of
+            //  the request performed
+
+            defer.resolve(resData);
+          }, function signUpError(resData) {
+            // ths first callback responds to the success of the
+            //  request performed
+
+            defer.reject(resData);
+          });
+
+        return defer.promise;
+      }
+
       return authFactory;
     });
 })();
