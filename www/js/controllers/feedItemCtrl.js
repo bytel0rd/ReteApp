@@ -5,6 +5,7 @@
 
       // comparing userId ids to prevent creator of a particular order from responding to the the in the feed
       var userId = CacheFactory.get('profileDataCache').get('profile').user._id;
+      var isAgent = CacheFactory.get('profileDataCache').get('profile').user.isAgent;
       var feedItemId = $stateParams.id;
       // this controls the visibilty of buttons
       // used to cancel and accept orders by agents
@@ -15,10 +16,17 @@
       ordersFactory.getFeedItem(feedItemId)
         .then(function(resData) {
           $scope.feed = resData.data;
+          console.log(resData.data);
+          if(!resData.data){
+            $scope.err = 'order not found in the database';
+            $scope.hideButtons = false;
+            return null;
+          }
           // userId === $scope.feed.owner_Id ||
-          if ($scope.feed.delivered) {
+          if ($scope.feed.awaiting || userId === $scope.feed.owner_Id) {
             $scope.showAbort = true;
-          }else {
+            $scope.err = "can't respond to your own created order";
+          } else {
             $scope.showAbort = false;
           }
         }, function(resData) {
@@ -29,7 +37,7 @@
       // if someOne has already become an agent or to become the agent
       // simulanenoulsy.
       $scope.acceptOrder = function(order_Id) {
-        ordersFactory.acceptOrder(order_Id, true)
+        ordersFactory.acceptOrder(order_Id)
           .then(function Success(resData) {
             $state.go('app.negotiaitions');
             $scope.hideButtons = true;

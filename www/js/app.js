@@ -19,6 +19,7 @@ app.run(function($ionicPlatform, CacheFactory) {
 
     // storage cache are created if they
     // do not exist before to hold various datas
+    // TODO: turn this to a functio to avoid code duplicaTion
     if (!CacheFactory.get('profileDataCache')) {
       CacheFactory.createCache('profileDataCache', {
         storageMode: 'localStorage',
@@ -35,6 +36,27 @@ app.run(function($ionicPlatform, CacheFactory) {
     }
     if (!CacheFactory.get('userOrdersCache')) {
       CacheFactory.createCache('userOrdersCache', {
+        storageMode: 'localStorage',
+        deleteOnExpire: 'aggressive',
+        recycleFreq: 6000
+      });
+    }
+    if (!CacheFactory.get('negoListCache')) {
+      CacheFactory.createCache('negoListCache', {
+        storageMode: 'localStorage',
+        deleteOnExpire: 'aggressive',
+        recycleFreq: 6000
+      });
+    }
+    if (!CacheFactory.get('negoItemCache')) {
+      CacheFactory.createCache('negoItemCache', {
+        storageMode: 'localStorage',
+        deleteOnExpire: 'aggressive',
+        recycleFreq: 6000
+      });
+    }
+    if (!CacheFactory.get('negoChatCache')) {
+      CacheFactory.createCache('negoChatCache', {
         storageMode: 'localStorage',
         deleteOnExpire: 'aggressive',
         recycleFreq: 6000
@@ -128,6 +150,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
             'menuContent': {
               controller: 'negotiaitionsCtrl',
               templateUrl: 'templates/negotiaitionsView.html'
+            }
+          }
+        })
+        .state('app.negotiate',{
+          url: '/negotiaitions/:id',
+          views: {
+            'menuContent': {
+              controller: 'chatCtrl',
+              templateUrl: 'templates/chatView.html'
             }
           }
         })

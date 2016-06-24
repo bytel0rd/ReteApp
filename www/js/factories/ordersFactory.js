@@ -59,11 +59,10 @@
     // an http  Post request is made to update a
     // the order object consist of the orderId
     // particular order and set the agentId for the order
-    ordersFactory.acceptOrder = function(_id, isAgent) {
+    ordersFactory.acceptOrder = function(_id) {
       var url = '/api/acceptOrder/';
       var defer = $q.defer();
       $http.post(url, {
-          isAgent: isAgent,
           orderId: _id
         })
         .then(function success(resData) {
@@ -80,6 +79,20 @@
 
       return defer.promise;
     }
+
+    // returns all negotiations in which
+    // the current user is involved in from the server.
+    ordersFactory.getNegotiations = function() {
+      var url = '/api/negotiations/'
+      return $http.get(url);
+    }
+
+    // returns a negotiations from the server.
+    ordersFactory.getNegotiate = function(id) {
+      var url = '/api/negotiations/' + id;
+      return $http.get(url);
+    }
+
     return ordersFactory;
   });
 })();

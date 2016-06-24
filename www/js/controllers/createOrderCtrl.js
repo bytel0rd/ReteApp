@@ -15,8 +15,12 @@
       iSocketFactory.emit('serverReceiveOrder', orderData, function(err, data) {
         orderData.hint = '';
         orderData.details = '';
-        if (err) $scope.err = err;
-        // if(!err) $state.go('app.mainMenu');
+        orderData.reciever_UserName = '';
+        if(!err) {
+          $state.go('app.orders');
+        }
+        console.log(err, data);
+        // $scope.err = err.errMgs;
       });
     };
 
