@@ -1,5 +1,5 @@
 (function() {
-  angular.module('iDeliver').factory('ordersFactory', function($http, $q, CacheFactory) {
+  angular.module('delo').factory('ordersFactory', function($http, $q, CacheFactory) {
 
     var userProfile = CacheFactory.get('profileDataCache').get('profile');
 
@@ -61,6 +61,55 @@
     // particular order and set the agentId for the order
     ordersFactory.acceptOrder = function(_id) {
       var url = '/api/acceptOrder/';
+      var defer = $q.defer();
+      $http.post(url, {
+          orderId: _id
+        })
+        .then(function success(resData) {
+          // ths first callback responds to the success of
+          //  the request performed
+
+          defer.resolve(resData);
+        }, function error(resData) {
+          // ths first callback responds to the success of the
+          //  request performed
+
+          defer.reject(resData);
+        });
+
+      return defer.promise;
+    }
+
+    // sends a post request with the
+    // with orderId has params to cancelOrder
+    // the order.
+
+    ordersFactory.cancelOrder = function(_id) {
+      var url = '/api/cancelOrder/';
+      var defer = $q.defer();
+      $http.post(url, {
+          orderId: _id
+        })
+        .then(function success(resData) {
+          // ths first callback responds to the success of
+          //  the request performed
+
+          defer.resolve(resData);
+        }, function error(resData) {
+          // ths first callback responds to the success of the
+          //  request performed
+
+          defer.reject(resData);
+        });
+
+      return defer.promise;
+    }
+
+    // sends a post request with the
+    // with orderId has params to confirm the order.
+
+    ordersFactory.confirmOrder = function(_id) {
+      var url = '/api/confirmOrder/';
       var defer = $q.defer();
       $http.post(url, {
           orderId: _id

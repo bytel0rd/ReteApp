@@ -1,5 +1,5 @@
 (function() {
-  angular.module('iDeliver').factory('iSocketFactory', function(socketFactory) {
+  angular.module('delo').factory('iSocketFactory', function(socketFactory) {
     var myIoSocket = io.connect('http://localhost:3000');
 
     // initalizung a connection to socket.io on the server;

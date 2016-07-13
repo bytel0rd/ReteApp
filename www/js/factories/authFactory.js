@@ -1,5 +1,5 @@
 (function() {
-  angular.module('iDeliver')
+  angular.module('delo')
     .factory('authFactory', function($http, $q) {
       var authFactory = {};
 

@@ -5,8 +5,8 @@ Cordova version: 6.1.1
 Config.xml file:
 
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.puffpuff.retee" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Retee</name>
+<widget id="com.puffpuff.Blink" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Blink</name>
   <description>
   your go to app for Product Delivery.
     </description>
