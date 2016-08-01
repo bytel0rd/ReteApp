@@ -8,7 +8,7 @@
       //  with the existing routes
 
       authFactory.login = function(loginData) {
-        var url = '/auth/signIn';
+        var url = 'http://delioserver-abizeus.rhcloud.com' + '/auth/signIn';
         var defer = $q.defer();
         $http.post(url, loginData)
           .then(function loginSuccess(resData) {
@@ -29,7 +29,7 @@
       // This methodes sends a http request
       // to the sever for signUp with the email,password and other biodatas
       authFactory.signUp = function(signUpData) {
-        var url = '/auth/signUp';
+        var url = 'http://delioserver-abizeus.rhcloud.com' + '/auth/signUp';
         var defer = $q.defer();
         $http.post(url, signUpData)
           .then(function signUpSuccess(resData) {
@@ -51,12 +51,12 @@
         // note the http request from angular
         // already returns a promise value
 
-        var url = '/auth/dashBoard';
+        var url = 'http://delioserver-abizeus.rhcloud.com' + '/auth/dashBoard';
         return $http.get(url);
       }
 
       authFactory.agentReq = function(agentData) {
-        var url = '/auth/authorizeAgent';
+        var url = 'http://delioserver-abizeus.rhcloud.com' + '/auth/authorizeAgent';
         var defer = $q.defer();
         $http.post(url, agentData)
           .then(function signUpSuccess(resData) {

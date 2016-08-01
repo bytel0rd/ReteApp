@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.puffpuff.Blink" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Blink</name>
+<widget id="com.delio.Delio" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Delio</name>
   <description>
     helping You TO deliver
     </description>
-  <author email="abiodunogundijo@gmail.com" href="http://puffpuff.com">
+  <author email="abiodunogundijo@gmail.com" href="http://delio.com">
       OGUNDIJO Abiodun
     </author>
   <content src="index.html"/>

@@ -1,11 +1,11 @@
 {
-  "name": "Blink",
+  "name": "Delio",
   "app_id": "",
   "proxies": [{
     "path": "/api",
-    "proxyUrl": "http://127.0.0.1:3000/api"
+    "proxyUrl": "http://delioserver-abizeus.rhcloud.com/api"
   }, {
     "path": "/auth",
-    "proxyUrl": "http://127.0.0.1:3000/auth"
+    "proxyUrl": "http://delioserver-abizeus.rhcloud.com/auth"
   }]
 }

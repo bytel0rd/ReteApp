@@ -27,12 +27,12 @@
 
     //returns all orders specific to the current user
     ordersFactory.getOrders = function() {
-      var url = '/api/orders';
+      var url = 'http://delioserver-abizeus.rhcloud.com' + '/api/orders';
       return getDataFromUrl(url);
     }
 
     ordersFactory.getDeliveries = function() {
-      var url = '/api/deliveries';
+      var url = 'http://delioserver-abizeus.rhcloud.com' + '/api/deliveries';
       return getDataFromUrl(url);
     }
 
@@ -45,14 +45,14 @@
     // already returns a promise value
     // "getOrderDetails" returns details about a particular Order
     ordersFactory.getOrderDetails = function(orderID) {
-      var url = '/api/orders/' + orderID;
+      var url = 'http://delioserver-abizeus.rhcloud.com' + '/api/orders/' + orderID;
       return $http.get(url);
     }
 
     // an http request is made to the server
     // to get the ordersDetails in th deliveryfeed.
     ordersFactory.getFeedItem = function(orderItem) {
-      var url = '/api/itemDetail/' + orderItem;
+      var url = 'http://delioserver-abizeus.rhcloud.com' + '/api/itemDetail/' + orderItem;
       return $http.get(url);
     }
 
@@ -60,7 +60,7 @@
     // the order object consist of the orderId
     // particular order and set the agentId for the order
     ordersFactory.acceptOrder = function(_id) {
-      var url = '/api/acceptOrder/';
+      var url = 'http://delioserver-abizeus.rhcloud.com' + '/api/acceptOrder/';
       var defer = $q.defer();
       $http.post(url, {
           orderId: _id
@@ -85,7 +85,7 @@
     // the order.
 
     ordersFactory.cancelOrder = function(_id) {
-      var url = '/api/cancelOrder/';
+      var url = 'http://delioserver-abizeus.rhcloud.com' + '/api/cancelOrder/';
       var defer = $q.defer();
       $http.post(url, {
           orderId: _id
@@ -109,7 +109,7 @@
     // with orderId has params to confirm the order.
 
     ordersFactory.confirmOrder = function(_id) {
-      var url = '/api/confirmOrder/';
+      var url = 'http://delioserver-abizeus.rhcloud.com' + '/api/confirmOrder/';
       var defer = $q.defer();
       $http.post(url, {
           orderId: _id
@@ -132,13 +132,13 @@
     // returns all negotiations in which
     // the current user is involved in from the server.
     ordersFactory.getNegotiations = function() {
-      var url = '/api/negotiations/'
+      var url = 'http://delioserver-abizeus.rhcloud.com' + '/api/negotiations/'
       return $http.get(url);
     }
 
     // returns a negotiations from the server.
     ordersFactory.getNegotiate = function(id) {
-      var url = '/api/negotiations/' + id;
+      var url = 'http://delioserver-abizeus.rhcloud.com' + '/api/negotiations/' + id;
       return $http.get(url);
     }
 

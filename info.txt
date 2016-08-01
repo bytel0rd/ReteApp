@@ -5,13 +5,13 @@ Cordova version: 6.1.1
 Config.xml file:
 
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.puffpuff.Blink" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Blink</name>
+<widget id="com.delio.Delio" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Delio</name>
   <description>
   your go to app for Product Delivery.
     </description>
-  <author email="abiodunogundijo@gmail.com" href="http://puffpuff.com/">
-      PuffPuff.com
+  <author email="abiodunogundijo@gmail.com" href="http://delio.com/">
+      http://delioserver-abizeus.rhcloud.com/
     </author>
   <content src="index.html"/>
   <access origin="*"/>

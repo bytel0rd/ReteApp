@@ -5,3 +5,7 @@ node_modules/
 platforms/
 plugins/
 www/lib
+resources/android/icon/xxxhdpi.png
+www/.jshintrc
+www/js/controllers/
+www/js/private.js
